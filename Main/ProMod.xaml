@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="Main.ProMod"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Main"
+             mc:Ignorable="d" 
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DesignHeight="450" d:DesignWidth="1500">
+    <UserControl.Resources>
+        <Style x:Key="RightAlignedColumn" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextAlignment" Value="Right" />
+        </Style>
+        <Style x:Key="RightAlignedColumnHeader" TargetType="{x:Type DataGridColumnHeader}" >
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        </Style>
+        <Style x:Key="NoTabFocusDataGridColumn" TargetType="{x:Type DataGridCell}">
+            <Setter Property="KeyboardNavigation.IsTabStop" Value="False"></Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+        <Grid x:Name="uiGrMain" ShowGridLines="False" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="30*" MinWidth="2"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Rectangle Grid.Column="2" Width="1" Stroke="Gray" Margin="1, 30, 1, 30"/>
+            <Grid Grid.Column="1" HorizontalAlignment="Left" Width="614" Grid.ColumnSpan="2" Grid.RowSpan="6"/>
+
+            <!--<my:UcDrucken Grid.Column="3" HorizontalAlignment="Left" Height="auto" Margin="0,10,0,0" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4" VerticalAlignment="Stretch" Width="auto"/>-->
+
+            <Grid x:Name="uiGrSuchkriterien" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="250"/>
+                </Grid.RowDefinitions>
+                <Label Content="Suchkriterien" Margin="10,0,36,0" FontSize="40" Grid.ColumnSpan="2" FontWeight="Light"/>
+            </Grid>
+
+            <Grid x:Name="uiGrSuchergebnisse" Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Suchergebnisse" Margin="10,0" FontSize="40"  FontWeight="Light"/>
+                <Rectangle Margin="15,14,15,14" Stroke="Gray" Height="1" Grid.Row="2"/>
+                <Label Content="Labels" Grid.Row="3" Margin="10,0" FontSize="40"  FontWeight="Light"/>
+            </Grid>
+
+        </Grid>
+
+    </ScrollViewer>
+</UserControl>

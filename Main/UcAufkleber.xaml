@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="Main.UcAufkleber"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Main"
+             mc:Ignorable="d" 
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DesignHeight="170" d:DesignWidth="340">
+    <UserControl.Resources>
+        <!-- Das hier ist ein Defaultbild für das Etikett, siehe Binding unten. -->
+        
+    </UserControl.Resources>
+    <Grid>
+
+                <!-- Auch Rows und Columns wären möglich. Aber recht flexibel ist es eh nicht, wenn das -->
+                <!-- später auf Papier mit festen Größen soll. -->
+
+                <!-- Rahmen um das Etikett -->
+                <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Stretch" Height="Auto" Margin="10,10,10,10"
+                   Stroke="Black" VerticalAlignment="Stretch" Width="Auto" />
+
+                <!-- Binding wie beim DataGrid. FallbackValue, wenn keine Daten da sind. -->
+                <!-- Insbesondere im Designer ist das gut, weil sonst sieht man nix. -->
+        <Label Content="{Binding ModBezeichnung, FallbackValue=ModellBezeichnung}" HorizontalAlignment="Stretch"
+               Height="37" Margin="20,20,100,10" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" />
+
+                <!-- Linie zwischen Bezeichnung und Artikelnummer. -->
+                <Rectangle HorizontalAlignment="Stretch" Width="Auto" Height="2" Fill="Black" Margin="20,50,20,10"
+                   VerticalAlignment="Top"/>
+
+                <!-- Artikelnummer und Größen -->
+        <Label Content="{Binding ArtBezeichnung, FallbackValue=Artikelbezeichnung}"
+               HorizontalAlignment="Left" Height="27" Margin="20,60,0,0" VerticalAlignment="Top" Width="144"/>
+        <Label Content="DE"
+               HorizontalAlignment="Left" Height="27" Margin="20,90,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="{Binding GroesseD, FallbackValue=00}"
+               HorizontalAlignment="Left" Height="27" Margin="20,120,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="Geschlecht"
+               HorizontalAlignment="Left" Height="27" Margin="65,90,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label Content="{Binding Geschlecht, FallbackValue=unisex}"
+               HorizontalAlignment="Left" Height="27" Margin="65,120,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label Content="Farbe"
+               HorizontalAlignment="Left" Height="27" Margin="142,90,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label Content="{Binding Farbe, FallbackValue=weiß}"
+               HorizontalAlignment="Left" Height="27" Margin="142,120,0,0" VerticalAlignment="Top" Width="auto"/>
+        <!-- <Label Content="D"
+               HorizontalAlignment="Left" Height="27" Margin="60,90,0,0" VerticalAlignment="Top" Width="40"/>
+                <Label Content="{Binding GroesseD, FallbackValue=00}"
+               HorizontalAlignment="Left" Height="27" Margin="60,120,0,0" VerticalAlignment="Top" Width="40"/>
+                <Label Content="Made in Bavaria"
+               HorizontalAlignment="Right" Height="27" Margin="100,120,10,10" VerticalAlignment="Top" Width="Auto"/>-->
+
+                <!-- Bild für den Schuh. Fallback ist nicht so einfach wie beim Label. -->
+        <Image HorizontalAlignment="Left" Height="53" Margin="263,62,0,0" VerticalAlignment="Top" Width="57" 
+               Source="{Binding Symbolbild}"/>
+        <!-- oder ..\Symbolbild.bmp-->
+
+
+    </Grid>
+</UserControl>

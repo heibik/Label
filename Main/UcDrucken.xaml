@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Main.UcDrucken"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Main"
+             mc:Ignorable="d" 
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+             Height="734" Width="525">
+
+
+    <Grid Height="667" Width="527">
+        <DocumentViewer Height="548" HorizontalAlignment="Left" Margin="28,76,0,0" Name="uiDocumentViewer" VerticalAlignment="Top" Width="459" />
+        <Button Height="54" HorizontalAlignment="Left" Margin="28,12,0,0" x:Name="uiButton_Copy1" VerticalAlignment="Top" Width="110" Click="UiButton_Entfernen" >
+            <TextBlock Text="Zuletzt hinzugefügt entfernen" TextWrapping="Wrap"/>
+        </Button>
+        <Button Height="54" HorizontalAlignment="Left" Margin="375,12,0,0" x:Name="uiButton_Copy" VerticalAlignment="Top" Width="110" Click="UiButton_Alle_Entfernen">
+            <TextBlock Text="Alle Artikel entfernen" TextWrapping="Wrap" Width="100"/>
+
+        </Button>
+        <TextBox x:Name="uiTBAnzahlDavor" HorizontalAlignment="Left" Height="25" Margin="143,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" TextAlignment="Center"/>
+        <Label Content="Anzahl der bereits gedruckten Aufkleber auf einem Blatt" HorizontalAlignment="Left" Margin="143,10,0,0" VerticalAlignment="Top" Width="227" Height="26"/>
+        <Button Content="Neu Laden" HorizontalAlignment="Left" Margin="248,41,0,0" VerticalAlignment="Top" Width="122" Height="25" Click="UiButton_Refresh"/>
+
+    </Grid>
+</UserControl>
