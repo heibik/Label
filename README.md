@@ -1,6 +1,9 @@
 # heibik label
 
 #### heibik label is a program to print labels using the MaterialDesignInXAML framework https://github.com/MaterialDesignInXAML
+#### The program is for a little shoe manufacture.
+#### This manufacture can maintain their products in this program and print the labels.
+#### The labels are placed on the shoe boxes.
 
 
 ## Credits
